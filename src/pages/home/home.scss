@@ -1,0 +1,53 @@
+page-home {
+
+
+   .segment .segment-button.segment-activated{
+    // color: map-get($colors, ame );
+    color: white;
+    background-color:map-get($colors , ame);
+    border-color:map-get($colors, ame );
+    box-shadow: 1px 2px 8px -2px black inset;
+        
+    }
+    .segment .segment-button{
+        color: map-get($colors, ame );
+    border-color:map-get($colors, ame );
+    font-size: 3vw;
+        
+    }
+    
+img{
+    height: 35vh;
+    filter: blur(2px)
+}
+a{
+    text-decoration: none;
+    // color: white;
+    
+
+    // background-color: black;
+}
+.card-background-page {
+        // background-color:rgba(224,224,224 ,1);
+      ion-card {
+        position: relative;
+        text-align: center;
+        border-radius: 10px;
+        margin-bottom: none;
+      }
+    
+      .card-title {
+        position: absolute;
+        top: 35%;
+        font-size:16px;
+        padding: 10px;
+        width: 90%;
+        margin-left:5%;
+        font-weight: bold;
+        background-color: rgba(255,255,255,0.6);
+        border-radius: 10px;
+        // text-align: center;
+        // word-wrap: break-word;
+      }
+    }    
+}

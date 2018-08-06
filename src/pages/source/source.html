@@ -1,0 +1,75 @@
+<!--
+  Generated template for the SourcePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="ame">
+    <ion-title text-center>Headlines</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <!-- <p text-center style="font-size: 2vh;margin-left:20px;margin-right:20px;" class="head">Headlines from top news channel and blogs</p> -->
+ 
+  <div padding>
+    <ion-row>
+      <ion-col col-3></ion-col>
+      <ion-col>
+  <ion-segment [(ngModel)]="selection" no-padding>
+    <ion-segment-button value="grid"  tappable>
+        <ion-icon name="grid"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button  value="list" tappable>
+        <ion-icon name="list-box"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+  </ion-col>
+  <ion-col col-3></ion-col>
+  </ion-row>
+</div>
+<div [ngSwitch]="selection">
+  <div *ngSwitchCase="'list'">
+          <ion-list>
+          <ion-item *ngFor="let item of items" (click)="news(item.id,item.name)" tappable>
+              <ion-avatar item-start>
+                  <img src="assets/img/{{item.id}}.png">
+                </ion-avatar>
+                <p style="font-size:16px;font-weight:bold;" text-wrap>
+                  {{item.name}}
+                </p>
+        </ion-item>
+        </ion-list>
+  </div>
+  <div *ngSwitchCase="'grid'">
+<ion-row style="padding-left:16px;padding-right:16px;">
+  <ion-col *ngFor="let item of items" col-4>
+    <ion-list no-lines>
+    <ion-item (click)="news(item.id,item.name)" class="item_content">
+      <img src="assets/img/{{item.id}}.png" alt="{{item.id}}">
+      <p class="name">{{item.name}}</p>
+    </ion-item>
+    </ion-list>
+  </ion-col>
+</ion-row>
+</div>
+</div>
+<!-- <ion-row>
+  <ion-col *ngFor="let item of items" col-6>
+    <img src="assets/img/{{item.id}}.png">
+  </ion-col>
+</ion-row> -->
+<!-- <ion-item *ngFor="let item of items" text-wrap>
+    <p>{{item.title}}</p>
+    <p>{{item.url}}</p>
+    <p>{{item.description}}</p>
+</ion-item> -->
+</ion-content>
+<ion-footer text-center padding style="font-size:10px;">
+    Powered by <a href="https://newsapi.org/">newsapi.org</a> | App design <a href="http://www.techyknights.com">Techyknights</a>
+      
+    </ion-footer>

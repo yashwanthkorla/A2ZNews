@@ -1,0 +1,46 @@
+page-source {
+.item_content{
+    // border:1px solid gray !important;
+    // box-shadow: 1.5px 2px 6px 0px;
+    // padding:10px;
+    // font-size:100%;
+    // height:20vh;
+    border:1px solid #CCC9C9 !important;
+    border-bottom: 4px solid map-get($colors, ame ) !important;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    // border-radius: 6px;
+    text-align: center;
+    // font-size: 100%;
+}
+
+img{
+    width: 100%;
+}
+.head{
+    background-color: rgba(149,165,166 ,.7);
+    color:white;
+    padding:5px 0;
+    border-radius: 6px;
+}
+.name{
+    padding-top:5px;
+    font-size: 2.5vw;
+}
+.segment .segment-button{
+    color:black;
+}
+.segment-ios .segment-button{
+    border-color:rgba(255,152,60,0.59);
+    color:rgba(255,152,60,0.59);
+}
+.segment .segment-button.segment-activated{
+    border-color:map-get($colors, ame );
+    color:map-get($colors, ame );
+}
+.segment-ios .segment-button.segment-activated{
+    background-color:white;
+    color:map-get($colors, ame );
+    
+}
+}

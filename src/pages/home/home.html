@@ -1,0 +1,93 @@
+<ion-header>
+    <ion-navbar color="ame">
+      <ion-title>
+            {{sourceName}}
+            </ion-title>  
+            </ion-navbar> 
+</ion-header>
+
+<ion-content class="card-background-page">
+        <div style="margin:20px;">
+          <ion-segment [(ngModel)]="selection">
+              <ion-segment-button value="top">
+                  Top
+              </ion-segment-button>
+              <ion-segment-button value="latest">
+                Latest
+              </ion-segment-button>
+              <!-- <ion-segment-button value="popular">
+                Popular
+              </ion-segment-button> -->
+            </ion-segment>
+        </div>
+
+      <div  [ngSwitch]='selection'>
+      <div *ngSwitchCase="'latest'">
+          <ion-card  *ngIf="latestNews == false">
+                <p padding>No Data on Latest news from <span>{{source}}</span> </p>
+          </ion-card>
+             <div  *ngIf="latestNews == true"> 
+            <!-- {{item.author}} -->
+                  <ion-card *ngFor="let item of items" (click)="info(item)" tappable>
+                    <!-- <object data="assets/img/Noimage.png" type="image/png"> -->
+                      <img src="{{item.urlToImage}}" alt="{{item.urlToImage}}">
+                      <!-- </object> -->
+                         
+                            <div class="card-title" text-wrap>
+                              {{item.title}}
+                            </div>
+                         
+                    </ion-card>
+               </div> 
+        </div>
+
+
+        <div *ngSwitchCase="'top'">
+<!--           
+              <ion-list no-lines>
+                    <ion-item > -->
+                  <!-- {{item.author}} -->
+                            <ion-card *ngFor="let topitem of topItems" (click)="info(topitem)" tappable>
+                                <img src="{{topitem.urlToImage}}" alt="{{topitem.urlToImage}}">
+                                     
+                                        <div class="card-title" text-wrap>
+                                         {{topitem.title}}
+                                        </div>
+                                        <!-- <p text-wrap>{{topitem.description}}</p> -->
+                                        <!-- <ion-row no-padding>
+                                            <ion-col>
+                                              <button ion-button clear small color="primary" icon-start>
+                                                <ion-icon name='people'></ion-icon>
+                                                {{topitem.author}}
+                                              </button>
+                                            </ion-col>
+                                            </ion-row> -->
+                                     
+                            </ion-card>
+                    <!-- </ion-item>
+                  </ion-list> -->
+        </div>
+
+            <!-- <div  *ngSwitchCase="'popular'">
+              <ion-card *ngIf="popularNews == false">
+                <p padding>No data on Popular post from {{source}}</p>
+              </ion-card>
+                <ion-list no-lines *ngIf="popularNews == true">
+                            <ion-item *ngFor="let popitem of popItems">
+                        
+                                    <ion-card>
+                                      <img src="{{popitem.urlToImage}}">
+                                     
+                                        <div class="card-title" text-wrap>
+                                          <a href="{{popitem.url}}">{{popitem.title}}</a>
+                                        </div>
+                                  
+                                     
+                                    </ion-card>
+                            </ion-item>
+                      </ion-list>
+            </div> -->
+</div> 
+
+</ion-content>
+
